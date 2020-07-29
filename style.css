@@ -146,6 +146,12 @@ body {
 	box-shadow: none;
 }
 
+#velocityProgress {
+	box-sizing: border-box;
+	margin-top: 5px;
+	width: 400px;
+}
+
 .tab {
 	text-align: center;
 }

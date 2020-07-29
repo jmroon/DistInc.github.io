@@ -31,22 +31,12 @@ function updateHTML() {
 	// Main
 	if (player.tab == "main") {
 		// Pre-Ranks
-		tmp.el.distance.setTxt(
-			formatDistance(player.distance) +
-				" (+" +
-				formatDistance(
-					adjustGen(player.velocity, "dist").times(nerfActive("noTS") ? 1 : tmp.timeSpeed)
-				) +
-				"/sec)"
-		);
-		tmp.el.velocity.setTxt(
-			formatDistance(player.velocity) +
-				"/s (+" +
-				formatDistance(adjustGen(tmp.acc, "vel").times(nerfActive("noTS") ? 1 : tmp.timeSpeed)) +
-				"/sec)"
-		);
+		tmp.el.distance.setTxt(formatDistance(player.distance));
+		tmp.el.velocity.setTxt(formatDistance(player.velocity));
 		tmp.el.maxVel.setTxt(formatDistance(tmp.maxVel));
 		tmp.el.acceleration.setTxt(formatDistance(tmp.acc));
+		tmp.el.velocityProgress.setAttr("value", player.velocity);
+		tmp.el.velocityProgress.setAttr("max", tmp.maxVel);
 
 		// Ranks
 		tmp.el.rank.setTxt(showNum(player.rank));
